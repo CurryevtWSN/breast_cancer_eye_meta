@@ -40,10 +40,10 @@ Histopathology =map[Histopathology]
 Axillary_lymph_node_metastasis = map[Axillary_lymph_node_metastasis]
 
 #%%load model
-bag_model = joblib.load('/Users/mac/Desktop/吴世楠文件夹/乳腺癌机器学习/初稿/bag_model.pkl')
+bag_model = joblib.load('bag_model.pkl')
 BAG_model = bag_model
 #%%load data
-hp_train = pd.read_csv('/Users/mac/Desktop/吴世楠文件夹/乳腺癌机器学习/初稿/breast_cancer.csv')
+hp_train = pd.read_csv('breast_cancer.csv')
 hp_train['M'] = hp_train['M'].apply(lambda x : +1 if x==1 else 0)
 features =["CEA","CA125","CA153","Hb","ALP",'Ca',"LDL",'ApoA','TC','Histopathology','CA199','Axillary_lymph_node_metastasis']
 target = 'M'
